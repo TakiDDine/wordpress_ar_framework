@@ -1,0 +1,70 @@
+.table-content .panel-heading {
+    background: #23282d !important;
+    border-bottom: 3px solid #0073aa !important;
+    color: white !important;
+    position: relative;
+}
+.table-content thead tr th {
+    height: 55px;
+    vertical-align: top !important;
+    line-height: 55px !important;
+    text-align: center;
+    background: #f3f3f3;
+}
+form.hdidp {
+    display: initial;
+    margin-left: 15px;
+}
+a.add_new_video {
+    position: absolute;
+    left: 26px;
+    top: 14px;
+    background: #5fba7d;
+    height: 46px;
+    border-radius: 3px;
+    width: 143px;
+    text-align: center;
+    line-height: 46px;
+    color: white;
+} 
+.content-wrapper {
+    padding-top: 45px;
+    float: right !important;
+}
+
+
+
+.smartcat-upload {
+color: rgb(255, 255, 255);
+background: rgb(59, 175, 218);
+font-size: 16px;
+padding: 10px 15px;
+margin-top: -2px;
+display: inline-block;
+border-radius: 3px;
+width: 152px;
+text-align: center;
+
+} 
+
+body.modal-open .modal {
+    display: flex !important;
+    height: 100%;
+} 
+
+body.modal-open .modal .modal-dialog {
+    margin: auto;
+}
+a.add_new_video.delete_all {
+    RIGHT: 190px;
+    LEFT: initial;
+}
+
+.text-black {
+    color: black;
+}
+a.add_new_video {
+    left: initial;
+}
+
+

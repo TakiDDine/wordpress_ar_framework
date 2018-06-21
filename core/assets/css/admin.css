@@ -1,0 +1,54 @@
+
+/*
+*
+*    Widgets
+*
+*/
+
+
+
+[id$=social_media_widget-__i__] .widget-top  ,
+[id$=featured_slider_sidebar-__i__] .widget-top ,
+[id$=categories_widget-__i__]  .widget-top ,
+[id$=tags_widget-__i__]  .widget-top ,
+[id$=search_widget-__i__] .widget-top ,
+[id$=about_me_widget-__i__] .widget-top ,
+[id$=popular_posts_widget-__i__] .widget-top ,
+[id$=insta_widget-__i__] .widget-top ,
+[id$=video_widget-__i__] .widget-top 
+ {
+    background:#8e44ad;
+}
+
+[id$=social_media_widget-__i__] .widget-top h3 ,
+[id$=featured_slider_sidebar-__i__] .widget-top h3 ,
+[id$=categories_widget-__i__]  .widget-top h3 ,
+[id$=tags_widget-__i__]  .widget-top h3 ,
+[id$=search_widget-__i__] .widget-top h3 ,
+[id$=about_me_widget-__i__] .widget-top h3 ,
+[id$=popular_posts_widget-__i__] .widget-top h3 ,
+[id$=insta_widget-__i__] .widget-top  h3 ,
+[id$=video_widget-__i__] .widget-top   h3 
+ {
+    color:white;
+}
+
+
+[id$=footerwidgetlads-__i__] .widget-top ,
+[id$=centerwidget-__i__] .widget-top,  
+[id$=rightwidget-__i__] .widget-top
+{
+    background: #29b6f6;
+}
+[id$=footerwidgetlads-__i__] .widget-top h3 ,
+[id$=centerwidget-__i__]  .widget-top h3 ,
+[id$=rightwidget-__i__]  .widget-top h3 
+
+{
+    color:white;
+}
+
+a.add_new_video {
+    left: initial;
+    right: 26px;
+}
