@@ -54,9 +54,21 @@ require_once THEME_DIR. '/core/arab-font.php';
 // AJAX
 require_once THEME_DIR. '/core/ajax.php';
 
-// Redux Framework : theme Settings 
+/*
+*   Redux Framework : theme Settings
+*   For More Help : https://docs.reduxframework.com/?_ga=2.55265582.422981565.1531536432-1545903062.1522381384
+*/
 include_once THEME_DIR . '/core/theme-options/ReduxCore/framework.php';
 require_once THEME_DIR.  '/core/theme-options/config.php';
+
+
+/*
+*   Codestar Framework : theme Settings
+*   For More Help : http://codestarframework.com/documentation 
+*/
+require_once THEME_DIR .'/core/codestar/cs-framework.php';
+
+
 
 // Bootstrap Nav Walker 
 require_once THEME_DIR. '/core/class-wp-bootstrap-navwalker.php';
@@ -67,11 +79,11 @@ require_once THEME_DIR . '/core/redux-metaboxes/metaboxes_api.php';
 require_once THEME_DIR. '/core/html-compressor.php';
 
 // portfolio
-require_once THEME_DIR. '/core/gallery_folio/plugin.php';
-require_once THEME_DIR. '/core/gallery_video/plugin.php';
+//require_once THEME_DIR. '/core/gallery_folio/plugin.php';
+//require_once THEME_DIR. '/core/gallery_video/plugin.php';
 
 /*
  To do , if the Theme is not activated , stop all the down stop to apear , the only thing will apear is activation page
 * now i have the extension of metabox , so every thing is fucked , yay baby
 */
-require_once THEME_DIR. '/core/libraries/init.php';
+//require_once THEME_DIR. '/core/libraries/init.php';

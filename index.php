@@ -1,10 +1,18 @@
-<?php app::dd($fonts); die(); ?>
+<?php 
+//app::dd($fonts);
+
+
+?>
 
 <!-- جلب الهيدر -->
 <?php  get_header();  ?>
 
 <!-- جلب اعدادات القالب من ريداكس فريمورك -->
-<?php global $theme_setting;  ?>
+    <?php global $theme_setting;  ?>
+ <?php echo $theme_setting['site-title']; die(); ?>
+
+
+
 
 <!-- جلب محتوى الهيدر -->
 <?php get_main_header(); ?>  
