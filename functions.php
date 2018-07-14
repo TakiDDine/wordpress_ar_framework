@@ -56,7 +56,7 @@ require_once THEME_DIR. '/core/ajax.php';
 
 /*
 *   Redux Framework : theme Settings
-*   For More Help : https://docs.reduxframework.com/?_ga=2.55265582.422981565.1531536432-1545903062.1522381384
+*   For More Help : https://docs.reduxframework.com
 */
 include_once THEME_DIR . '/core/theme-options/ReduxCore/framework.php';
 require_once THEME_DIR.  '/core/theme-options/config.php';
@@ -87,3 +87,6 @@ require_once THEME_DIR. '/core/html-compressor.php';
 * now i have the extension of metabox , so every thing is fucked , yay baby
 */
 //require_once THEME_DIR. '/core/libraries/init.php';
+
+
+
