@@ -90,3 +90,131 @@ require_once THEME_DIR. '/core/html-compressor.php';
 
 
 
+
+add_action( 'admin_menu', 'dkjdkjd_add_admin_menu' );
+add_action( 'admin_init', 'dkjdkjd_settings_init' );
+
+
+function dkjdkjd_add_admin_menu(  ) { 
+
+	add_submenu_page( 'tools.php', 'kadlk', 'kadlk', 'manage_options', 'kadlk', 'dkjdkjd_options_page' );
+
+}
+
+
+function dkjdkjd_settings_init(  ) { 
+
+	register_setting( 'pluginPage', 'dkjdkjd_settings' );
+
+	add_settings_section(
+		'dkjdkjd_pluginPage_section', 
+		__( 'Your section description', 'ddddd' ), 
+		'dkjdkjd_settings_section_callback', 
+		'pluginPage'
+	);
+
+	add_settings_field( 
+		'dkjdkjd_text_field_0', 
+		__( 'Settings field description', 'ddddd' ), 
+		'dkjdkjd_text_field_0_render', 
+		'pluginPage', 
+		'dkjdkjd_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'dkjdkjd_text_field_1', 
+		__( 'Settings field description', 'ddddd' ), 
+		'dkjdkjd_text_field_1_render', 
+		'pluginPage', 
+		'dkjdkjd_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'dkjdkjd_checkbox_field_2', 
+		__( 'Settings field description', 'ddddd' ), 
+		'dkjdkjd_checkbox_field_2_render', 
+		'pluginPage', 
+		'dkjdkjd_pluginPage_section' 
+	);
+
+	add_settings_field( 
+		'dkjdkjd_select_field_3', 
+		__( 'Settings field description', 'ddddd' ), 
+		'dkjdkjd_select_field_3_render', 
+		'pluginPage', 
+		'dkjdkjd_pluginPage_section' 
+	);
+
+
+}
+
+
+function dkjdkjd_text_field_0_render(  ) { 
+
+	$options = get_option( 'dkjdkjd_settings' );
+	?>
+	<input type='text' name='dkjdkjd_settings[dkjdkjd_text_field_0]' value='<?php echo $options['dkjdkjd_text_field_0']; ?>'>
+	<?php
+
+}
+
+
+function dkjdkjd_text_field_1_render(  ) { 
+
+	$options = get_option( 'dkjdkjd_settings' );
+	?>
+	<input type='text' name='dkjdkjd_settings[dkjdkjd_text_field_1]' value='<?php echo $options['dkjdkjd_text_field_1']; ?>'>
+	<?php
+
+}
+
+
+function dkjdkjd_checkbox_field_2_render(  ) { 
+
+	$options = get_option( 'dkjdkjd_settings' );
+	?>
+	<input type='checkbox' name='dkjdkjd_settings[dkjdkjd_checkbox_field_2]' <?php checked( $options['dkjdkjd_checkbox_field_2'], 1 ); ?> value='1'>
+	<?php
+
+}
+
+
+function dkjdkjd_select_field_3_render(  ) { 
+
+	$options = get_option( 'dkjdkjd_settings' );
+	?>
+	<select name='dkjdkjd_settings[dkjdkjd_select_field_3]'>
+		<option value='1' <?php selected( $options['dkjdkjd_select_field_3'], 1 ); ?>>Option 1</option>
+		<option value='2' <?php selected( $options['dkjdkjd_select_field_3'], 2 ); ?>>Option 2</option>
+	</select>
+
+<?php
+
+}
+
+
+function dkjdkjd_settings_section_callback(  ) { 
+
+	echo __( 'This section description', 'ddddd' );
+
+}
+
+
+function dkjdkjd_options_page(  ) { 
+
+	?>
+	<form action='options.php' method='post'>
+
+		<h2>kadlk</h2>
+
+		<?php
+		settings_fields( 'pluginPage' );
+		do_settings_sections( 'pluginPage' );
+		submit_button();
+		?>
+
+	</form>
+	<?php
+
+}
+

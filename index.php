@@ -1,6 +1,6 @@
 <?php 
 //app::dd($fonts);
-
+echo 	$options = get_option( 'dkjdkjd_settings' )['dkjdkjd_text_field_0'];
 
 ?>
 
