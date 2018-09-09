@@ -74,8 +74,8 @@
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => true,
         // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'اعدادات القالب', 'redux-framework-demo' ),
-        'page_title'           => __( 'اعدادات القالب', 'redux-framework-demo' ),
+        'menu_title'           => __( 'اعدادات القالب', 'caynoon_text' ),
+        'page_title'           => __( 'اعدادات القالب', 'caynoon_text' ),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
@@ -175,19 +175,19 @@
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-docs',
         'href'  => 'http://docs.reduxframework.com/',
-        'title' => __( 'Documentation', 'redux-framework-demo' ),
+        'title' => __( 'Documentation', 'caynoon_text' ),
     );
 
     $args['admin_bar_links'][] = array(
         //'id'    => 'redux-support',
         'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-        'title' => __( 'Support', 'redux-framework-demo' ),
+        'title' => __( 'Support', 'caynoon_text' ),
     );
 
     $args['admin_bar_links'][] = array(
         'id'    => 'redux-extensions',
         'href'  => 'reduxframework.com/extensions',
-        'title' => __( 'Extensions', 'redux-framework-demo' ),
+        'title' => __( 'Extensions', 'caynoon_text' ),
     );
 
 
@@ -206,19 +206,19 @@
     $tabs = array(
         array(
             'id'      => 'redux-help-tab-1',
-            'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 1', 'caynoon_text' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'caynoon_text' )
         ),
         array(
             'id'      => 'redux-help-tab-2',
-            'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
-            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+            'title'   => __( 'Theme Information 2', 'caynoon_text' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'caynoon_text' )
         )
     );
     Redux::setHelpTab( $opt_name, $tabs );
 
     // Set the help sidebar
-    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo' );
+    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'caynoon_text' );
     Redux::setHelpSidebar( $opt_name, $content );
 
 
@@ -240,170 +240,60 @@
      */
 
     // -> START Basic Fields
-$cats = get_categories( array( 'orderby' => 'ID', 'hide_empty'=>0 ) );
-$hadik = [];
-foreach($cats as $cat){
-    $hadik[$cat->cat_ID] = $cat->name;
-}
-
-$arfonts = [];
-foreach($fonts as $font){
-    $arfonts[$font['name']] = $font['name'];
-}
+//$cats = get_categories( array( 'orderby' => 'ID', 'hide_empty'=>0 ) );
+//$hadik = [];
+//foreach($cats as $cat){
+//    $hadik[$cat->cat_ID] = $cat->name;
+//}
+//
+//$arfonts = [];
+//foreach($fonts as $font){
+//    $arfonts[$font['name']] = $font['name'];
+//}
 
 
 
 
 Redux::setSection( $opt_name, array(
-        'title'      => __( 'الإعدادات العامة', 'redux-framework-demo' ),
-        'id'         => 'generhal-settings',
+        'title'      => __( 'General Settings', 'caynoon_text' ),
+        'id'         => 'general-settings',
         'subsection' => false,
         'fields'     => array(
-            array(
-                'id'       => 'site-title',
-                'type'     => 'text',
-                'title'    => __( 'عنوان الموقع', 'redux-framework-demo' ),
-                'desc'     => __( 'المرجوا ادخال العنوان الرسمي للموقع', 'redux-framework-demo' ),
-                'default'  => 'Default Text',
-            ), 
                 array(
-                'id'       => 'slogan-title',
-                'type'     => 'text',
-                'title'    => __( 'نبذة قليلة', 'redux-framework-demo' ),
-                'desc'     => __( 'بكلمات قليلة، أكتب نبذة قصيرة عن الموقع.', 'redux-framework-demo' ),
-                'default'  => '',
-            ),    
-            array(
-                'id'       => 'logo-settings',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'اللوغو الخاص', 'redux-framework-demo' ),
-                'compiler' => 'true',
-                'subtitle' => __( 'المرجوا رفع اللوغو الخاص بالقالب', 'redux-framework-demo' ),
-                'default'  => array( 'url' => get_template_directory_uri().'/core/assets/images/logo.png' ),
-            ),
-    array(
-                    'id'       => 'favicon-settings',
+                    'id'       => 'site-title',
+                    'type'     => 'text',
+                    'title'    => __( 'site title', 'caynoon_text' ),
+                    'desc'     => __( 'Please insert site title', 'caynoon_text' ),
+                    'default'  => 'site title',
+                ), 
+
+                array(
+                    'id'       => 'logo-url',
                     'type'     => 'media',
                     'url'      => true,
-                    'title'    => __( 'ايقونة الموقع', 'redux-framework-demo' ),
+                    'title'    => __( 'Logo', 'caynoon_text' ),
                     'compiler' => 'true',
-                    'subtitle' => __( 'المرجوا رفع الأيقونة التي ستظهر في اعلى الموقع  ', 'redux-framework-demo' ),
-                    'default'  => array( 'url' => get_template_directory_uri().'/core/assets/images/fav.png' )
-            ),
-                        array(
-                'id'       => 'copy_rights',
-                'type'     => 'text',
-                'title'    => __( 'النص الحقوق في الفوتر', 'redux-framework-demo' ),
-                'default'  => '2018 (c) جميع الحقوق محفوظة ',
-            ),  
-
- array(
-                'id'       => 'opt-color-site',
-                'type'     => 'color',
-                'output'   => array( '.site-title' ),
-                'title'    => __( 'لون الموقع الرئيسي', 'redux-framework-demo' ),
-                'subtitle' => __( 'اختيار لون للموقع.', 'redux-framework-demo' ),
-                'default'  => '#000000',
-            ),
-       
-    
-    
-    
-      array(
-                'id'       => 'home-categories',
-                'type'     => 'checkbox',
-                'title'    => __( 'المقالات الرئيسية', 'redux-framework-demo' ),
-                'subtitle' => __( 'صنف المقالات التي تظهر في الرئيسية', 'redux-framework-demo' ),
-                'desc'     => __( 'تنبيه : من الأفضل جداً أن يتم اختيار 4 على الأكثر', 'redux-framework-demo' ),
-                //Must provide key => value pairs for multi checkbox options
-                'options'  =>$hadik,
-                //See how std has changed? you also don't need to specify opts that are 0.
-                
-        ),
-    
-    
-    array(
-                'id'       => 'arfont',
-                'type'     => 'select',
-                'title'    => __( 'اختيار الخط العربي', 'redux-framework-demo' ),
-                'options'  => $arfonts,
-            ),
-    
-    
-         array(
-                    'id'       => 'readMore-text',
-                    'type'     => 'text',
-                    'desc'             => __( 'زر اقرأ المزيد', 'redux-framework-demo' ),
-                    'title'    => __( 'تغيير النص الخاص باقرأ المزيد', 'redux-framework-demo' ),
-                    'default'  => 'أكمل القراءة'
+                    'subtitle' => __( 'Please Choose your logo', 'caynoon_text' ),
+                    'default'  => array( 'url' => get_template_directory_uri().'/core/assets/images/logo.png' ),
                 ),
-                     array(
-                    'id'       => 'search-placeholder',
-                    'type'     => 'text',
-                    'desc'             => __( 'النص الخاص بفورم البحث', 'redux-framework-demo' ),
-                    'title'    => __( 'تغيير النص الخاص بمحرك البحث', 'redux-framework-demo' ),
-                    'default'  => 'ادخل كلمة البحث...'
-                ),       
-
-  array(
-                'id'       => 'boxed-full-width',
-                'type'     => 'select',
-                'title'    => __( 'شكل حدود الموقع', 'redux-framework-demo' ),
-                'options'  => 
-                    [
-                        'full-width'=>'الحجم كامل',
-                        'boxed'=>'مربع في المنتصف'
-                    ],
-                'default'  => 'full-width'
-            ),
-    
-            array(
-    
-    'id'       => 'header-template',
-                'type'     => 'select',
-                    'title'    => __( 'شكل الهيدر', 'redux-framework-demo' ),
-
-                'options'  => 
-                    [
-                        'template-1'=>'الشكل الأول',
-                        'template-2'=>'الشكل الثاني',
-                        'template-3'=>'الشكل الثالث'
-                    ],
-                'default'  => 'template-1'
-            ),
-    
-    
-     array(
-                    'id'       => 'margin-top-bottom-size',
-                    'type'     => 'text',
-                    'desc'             => __( 'هذه الخاصية تتفعل فقط في حالة اذا كان شكل الموقع مربع في المنتصف', 'redux-framework-demo' ),
-                    'title'    => __( 'حجم البعد عن الأعلى والأسفل', 'redux-framework-demo' ),
-                    'default'  => '35px'
+                array(
+                        'id'       => 'favicon-url',
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => __( 'Favicon', 'caynoon_text' ),
+                        'compiler' => 'true',
+                        'subtitle' => __( 'Please choose the Favicon', 'caynoon_text' ),
+                        'default'  => array( 'url' => get_template_directory_uri().'/core/assets/images/fav.png' )
                 ),
-    
-      array(
-                'id'       => 'background-img',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'صورة الخلفية', 'redux-framework-demo' ),
-                'compiler' => 'true',
-                'default'  => array( 'url' => get_template_directory_uri().'/assets/img/bg.jpg' ),
-            ),
-            
-    
-    
-    
+                            array(
+                    'id'       => 'footer_copy_rights',
+                    'type'     => 'text',
+                    'title'    => __( 'Footer Copyrights', 'caynoon_text' ),
+                    'default'  => '2018 (c) All rights reserved ',
+                ),  
+
      ),
-    
-    
-    
-    
-    
-    
-    
-    
-    ) );
+ ) );
 
 
 
@@ -411,68 +301,61 @@ Redux::setSection( $opt_name, array(
 
 
     Redux::setSection( $opt_name, array(
-        'title'            => __( 'السوشيال ميديا', 'redux-framework-demo' ),
+        'title'            => __( 'Social Media Links', 'caynoon_text' ),
         'id'               => 'basic',
-        'desc'             => __( 'روابط مواقع االتواصل الاجتماعي!', 'redux-framework-demo' ),
         'customizer_width' => '400px',
         'icon'             => 'el el-link',
         'fields'     => array(
                 array(
-                    'id'       => 'facebook-link',
+                    'id'       => 'facebook',
                     'type'     => 'text',
-                    'title'    => __( 'حساب الفيسبوك', 'redux-framework-demo' ),
+                    'title'    => __( 'Facebook Account', 'caynoon_text' ),
                     'default'  => 'http://www.facebook.com'
 
                 ),   
                 array(
-                    'id'       => 'twitter-link',
+                    'id'       => 'twitter',
                     'type'     => 'text',
-                    'title'    => __( 'حساب التويتر', 'redux-framework-demo' ),
+                    'title'    => __( 'twitter Account', 'caynoon_text' ),
                     'default'  => 'http://www.twitter.com'
                 ),
                 array(
-                    'id'       => 'linkedin-link',
+                    'id'       => 'linkedin',
                     'type'     => 'text',
-                    'title'    => __( 'حساب لينكد ان', 'redux-framework-demo' ),
+                    'title'    => __( 'linkedin Account', 'caynoon_text' ),
                     'default'  => 'http://www.linkedin.com'
                 ),        
                 array(
-                    'id'       => 'pinitrest-link',
+                    'id'       => 'pinterest',
                     'type'     => 'text',
-                    'title'    => __( 'حساب بينترست', 'redux-framework-demo' ),
+                    'title'    => __( 'pinterest Account', 'caynoon_text' ),
                     'default'  => 'http://www.pinitrest.com'
                 ),
                 array(
-                    'id'       => 'instagram-link',
+                    'id'       => 'instagram',
                     'type'     => 'text',
-                    'title'    => __( 'حساب الأنستغرام', 'redux-framework-demo' ),
+                    'title'    => __( 'instagram Account', 'caynoon_text' ),
                     'default'  => 'http://www.instagram.com'
         
                 ),        
                 array(
-                    'id'       => 'googleplus-link',
+                    'id'       => 'googleplus',
                     'type'     => 'text',
-                    'title'    => __( 'حساب جوجل بلس', 'redux-framework-demo' ),
+                    'title'    => __( 'googleplus Account', 'caynoon_text' ),
                     'default'  => 'http://www.google.com'
                 ),  
                 array(
-                    'id'       => 'youtube-link',
+                    'id'       => 'youtube',
                     'type'     => 'text',
-                    'title'    => __( 'حساب يوتوب', 'redux-framework-demo' ),
+                    'title'    => __( 'youtube Account', 'caynoon_text' ),
                     'default'  => 'http://www.youtube.com'
                 ),  
-                array(
-                    'id'       => 'soundcloud-link',
-                    'type'     => 'text',
-                    'title'    => __( 'حساب سانود كلاود', 'redux-framework-demo' ),
-                    'default'  => 'http://www.youtube.com'
-                ),          
                 array(
                     'id'       => 'soundcloud',
                     'type'     => 'text',
-                    'title'    => __( 'حساب سانود كلاود', 'redux-framework-demo' ),
+                    'title'    => __( 'soundcloud Account', 'caynoon_text' ),
                     'default'  => 'http://www.youtube.com'
-                ),    
+                ),             
         )
     ) );
 
@@ -481,74 +364,6 @@ Redux::setSection( $opt_name, array(
   
 
 
-Redux::setSection( $opt_name, array(
-        'title'            => __( 'صفحة تواصل معنا', 'redux-framework-demo' ),
-        'id'               => 'contact-page',
-        'desc'             => __( 'المعلومات الخاص بصفحة التواصل', 'redux-framework-demo' ),
-        'customizer_width' => '400px',
-        'icon'             => 'el el-link',
-        'fields'     => array(
-            
-            
-               array(
-                    'id'       => 'show-hide-header-contact',
-                    'type'     => 'switch',
-                    'title'    => __( 'اظهار/ اخفاء الهيدر العلوي', 'redux-framework-demo' ),
-                    'on'    => __( 'اظهار' ),
-                    'off'    => __( 'اخفاء' ),
-                    'default'  => 1,
-                ),
-             array(
-                'id'       => 'contact-page-header-bg',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'صورة خلفية الهيدر', 'redux-framework-demo' ),
-                'compiler' => 'true',
-                'subtitle' => __( '', 'redux-framework-demo' ),
-                'default'  => array( 'url' => get_template_directory_uri().'/core/assets/images/banner/banner.jpg' ),
-            ),
-                 array(
-                    'id'           => 'contact-page-desc',
-                    'type'         => 'textarea',
-                    'title'        => __( 'وصف صفحة تواصل معنا', 'redux-framework-demo' ),
-                    'validate'     => 'html_custom',
-                    'allowed_html' => array(
-                        'a'      => array(
-                            'href'  => array(),
-                            'title' => array()
-                        ),
-                        'br'     => array(),
-                        'em'     => array(),
-                        'strong' => array()
-                )),
-                array(
-                    'id'       => 'adress-contact',
-                    'type'     => 'text',
-                    'title'    => __( 'العنوان', 'redux-framework-demo' ),
-                    'default'  => 'المغرب - ألمانيا '
-                ),   
-                array(
-                    'id'       => 'phone-contact',
-                    'type'     => 'text',
-                    'title'    => __( 'رقم الهاتف', 'redux-framework-demo' ),
-                    'default'  => '+00 123 456 789'
-                ),
-                array(
-                    'id'       => 'email-contact',
-                    'type'     => 'text',
-                    'title'    => __( 'البريد الالكتروني', 'redux-framework-demo' ),
-                    'default'  => 'contact@email.com'
-                ),     
-                array(
-                    'id'       => 'email-reciever',
-                    'type'     => 'text',
-                    'title'    => __( 'بريد استقبال الرسائل', 'redux-framework-demo' ),
-                    'desc'             => __( 'هذا البريد هو الذي سيستقبل الرسائل التي تصل من صفحة تواصل معنا ، لذلك يرجى ادخاله بعناية', 'redux-framework-demo' ),
-                    'default'  => ''
-                ),  
-              
-        )
-) );
 
 
 
@@ -557,379 +372,6 @@ Redux::setSection( $opt_name, array(
 
 
 
-
-  
-
-
-Redux::setSection( $opt_name, array(
-        'title'            => __( 'صفحة جدول المباريات', 'redux-framework-demo' ),
-        'id'               => 'matches-page',
-        'desc'             => __( 'المعلومات الخاص بصفحة جدول المباريات', 'redux-framework-demo' ),
-        'customizer_width' => '400px',
-        'icon'             => 'el el-link',
-        'fields'     => array(
-            
-            
-               array(
-                    'id'       => 'show-hide-header-matches-page',
-                    'type'     => 'switch',
-                    'title'    => __( 'اظهار/ اخفاء الهيدر العلوي', 'redux-framework-demo' ),
-                    'on'    => __( 'اظهار' ),
-                    'off'    => __( 'اخفاء' ),
-                    'default'  => 1,
-                ),
-               array(
-                'id'       => 'matches-page-header-bg',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'صورة خلفية الهيدر', 'redux-framework-demo' ),
-                'compiler' => 'true',
-                'subtitle' => __( '', 'redux-framework-demo' ),
-                'default'  => array( 'url' => get_template_directory_uri().'/core/assets/images/banner/banner.jpg' ),
-            ),
-                 array(
-                    'id'           => 'matches-page-desc',
-                    'type'         => 'textarea',
-                    'title'        => __( 'وصف صفحة جدول المباريات', 'redux-framework-demo' ),
-                    'validate'     => 'html_custom',
-                    'allowed_html' => array(
-                        'a'      => array(
-                            'href'  => array(),
-                            'title' => array()
-                        ),
-                        'br'     => array(),
-                        'em'     => array(),
-                        'strong' => array()
-                )),
-            
-                
-            array(
-                'id'       => 'counter-matches',
-                'type'     => 'spinner', 
-                'title'    => __('عدد المباريات بالصفحة', 'redux-framework-demo'),
-                'subtitle' => __('عدد المباريات التي سيتم عرضها في صفحة جدول المباريات','redux-framework-demo'),
-                'default'  => '6',
-                'min'      => '1',
-                'step'     => '1',
-                'max'      => '400',
-            ),
-     
-             
-        )
-) );
-
-
-
-
-
-
-
-  
-
-
-Redux::setSection( $opt_name, array(
-        'title'            => __( 'صفحة المدونة', 'redux-framework-demo' ),
-        'id'               => 'blog-page',
-        'desc'             => __( 'المعلومات الخاص بصفحة جدول المباريات', 'redux-framework-demo' ),
-        'customizer_width' => '400px',
-        'icon'             => 'el el-link',
-        'fields'     => array(
-            
-            
-               array(
-                    'id'       => 'show-hide-header-blog-page',
-                    'type'     => 'switch',
-                    'title'    => __( 'اظهار/ اخفاء الهيدر العلوي', 'redux-framework-demo' ),
-                    'on'    => __( 'اظهار' ),
-                    'off'    => __( 'اخفاء' ),
-                    'default'  => 1,
-                ),
-               array(
-                'id'       => 'blog-page-header-bg',
-                'type'     => 'media',
-                'url'      => true,
-                'title'    => __( 'صورة خلفية الهيدر', 'redux-framework-demo' ),
-                'compiler' => 'true',
-                'subtitle' => __( '', 'redux-framework-demo' ),
-                'default'  => array( 'url' => get_template_directory_uri().'/core/assets/images/banner/banner.jpg' ),
-            ),
-                 array(
-                    'id'           => 'matches-page-blog',
-                    'type'         => 'textarea',
-                    'title'        => __( 'وصف صفحة المدونة', 'redux-framework-demo' ),
-                    'validate'     => 'html_custom',
-                    'allowed_html' => array(
-                        'a'      => array(
-                            'href'  => array(),
-                            'title' => array()
-                        ),
-                        'br'     => array(),
-                        'em'     => array(),
-                        'strong' => array()
-                )),
-            
-                
-            array(
-                'id'       => 'counter-blogs',
-                'type'     => 'spinner', 
-                'title'    => __('عدد المقالات بالصفحة', 'redux-framework-demo'),
-                'subtitle' => __('عدد المقالات التي سيتم عرضها في صفحة المدونة','redux-framework-demo'),
-                'default'  => '9',
-                'min'      => '1',
-                'step'     => '1',
-                'max'      => '400',
-            ),
-     
-             
-        )
-) );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Redux::setSection( $opt_name, array(
-        'title'      => __( ' الاعلانات', 'redux-framework-demo' ),
-        'id'         => 'adsnse-settings',
-        'subsection' => false,
-        'fields'     => array(
-    
-    
-            array(
-                    'id'       => 'myads-1',
-                    'type'     => 'button_set',
-                    'title'    => 'اعلان الهيدر 728*90',                
-                    'options'  => array(
-                        'ads-image'     => 'صورة',
-                        'ads-textarea' => 'كود أدسنس او html',
-                    ),
-
-            ),
-            array(
-                'id'       => 'image-ads-1',
-                'type'     => 'media',
-                'url'      => true,
-                'compiler' => 'true',
-                'required' => array( 'myads-1', '=', 'ads-image' )
-            ),
-            array(
-                'id'       => 'link-image-ads-1',
-                'type'     => 'text',
-                'desc'     => __( 'رابط الصورة عند الضغط عليها ، الرابط اختياري فقط', 'redux-framework-demo' ),
-                'required' => array( 'myads-1', '=', 'ads-image' )
-            ), 
-            array(
-                'id'       => 'code-ads-1',
-                'type'     => 'textarea',
-                'required' => array( 'myads-1', '=', 'ads-textarea' )
-            ),
-    
-    
- 
-               
-            array(
-                    'id'       => 'myads-2',
-                    'type'     => 'button_set',
-                    'title'    => 'اعلان السايدبار',
-                    'subtitle' => 'المرجوا اختيار نوع الإعلان',
-                    'options'  => array(
-                        'ads-image'     => 'صورة',
-                        'ads-textarea' => 'كود أدسنس او html',
-                    ),
-
-            ),
-            array(
-                'id'       => 'image-ads-2',
-                'type'     => 'media',
-                'url'      => true,
-                'compiler' => 'true',
-                'required' => array( 'myads-2', '=', 'ads-image' )
-            ),
-            array(
-                'id'       => 'link-image-ads-2',
-                'type'     => 'text',
-                'desc'     => __( 'رابط الصورة عند الضغط عليها ، الرابط اختياري فقط', 'redux-framework-demo' ),
-                'required' => array( 'myads-2', '=', 'ads-image' )
-            ), 
-            array(
-                'id'       => 'code-ads-2',
-                'type'     => 'textarea',
-                'required' => array( 'myads-2', '=', 'ads-textarea' )
-            ),
-             
-    
-    
-    
-    
-    
-     array(
-                    'id'       => 'myads-3',
-                    'type'     => 'button_set',
-                    'title'    => 'اعلان في الرئيسية فوق المقالات والمباريات الجديدة',
-                    'subtitle' => 'المرجوا اختيار نوع الإعلان',
-                    'options'  => array(
-                        'ads-image'     => 'صورة',
-                        'ads-textarea' => 'كود أدسنس او html',
-                    ),
-
-            ),
-            array(
-                'id'       => 'image-ads-3',
-                'type'     => 'media',
-                'url'      => true,
-                'compiler' => 'true',
-                'required' => array( 'myads-3', '=', 'ads-image' )
-            ),
-            array(
-                'id'       => 'link-image-ads-3',
-                'type'     => 'text',
-                'desc'     => __( 'رابط الصورة عند الضغط عليها ، الرابط اختياري فقط', 'redux-framework-demo' ),
-                'required' => array( 'myads-3', '=', 'ads-image' )
-            ), 
-            array(
-                'id'       => 'code-ads-3',
-                'type'     => 'textarea',
-                'required' => array( 'myads-3', '=', 'ads-textarea' )
-            ),
-             
-    
-    
-    
-    
-    
-         array(
-                    'id'       => 'myads-4',
-                    'type'     => 'button_set',
-                    'title'    => 'الإعلان الأول في صفحة المباراة',
-                    'subtitle' => 'المرجوا اختيار نوع الإعلان',
-                    'options'  => array(
-                        'ads-image'     => 'صورة',
-                        'ads-textarea' => 'كود أدسنس او html',
-                    ),
-
-            ),
-            array(
-                'id'       => 'image-ads-4',
-                'type'     => 'media',
-                'url'      => true,
-                'compiler' => 'true',
-                'required' => array( 'myads-4', '=', 'ads-image' )
-            ),
-            array(
-                'id'       => 'link-image-ads-4',
-                'type'     => 'text',
-                'desc'     => __( 'رابط الصورة عند الضغط عليها ، الرابط اختياري فقط', 'redux-framework-demo' ),
-                'required' => array( 'myads-4', '=', 'ads-image' )
-            ), 
-            array(
-                'id'       => 'code-ads-4',
-                'type'     => 'textarea',
-                'required' => array( 'myads-4', '=', 'ads-textarea' )
-            ),
-             
-        
-    
-         array(
-                    'id'       => 'myads-5',
-                    'type'     => 'button_set',
-                    'title'    => 'الإعلان الثاني في صفحة المباراة',
-                    'subtitle' => 'المرجوا اختيار نوع الإعلان',
-                    'options'  => array(
-                        'ads-image'     => 'صورة',
-                        'ads-textarea' => 'كود أدسنس او html',
-                    ),
-
-            ),
-            array(
-                'id'       => 'image-ads-5',
-                'type'     => 'media',
-                'url'      => true,
-                'compiler' => 'true',
-                'required' => array( 'myads-5', '=', 'ads-image' )
-            ),
-            array(
-                'id'       => 'link-image-ads-5',
-                'type'     => 'text',
-                'desc'     => __( 'رابط الصورة عند الضغط عليها ، الرابط اختياري فقط', 'redux-framework-demo' ),
-                'required' => array( 'myads-5', '=', 'ads-image' )
-            ), 
-            array(
-                'id'       => 'code-ads-5',
-                'type'     => 'textarea',
-                'required' => array( 'myads-5', '=', 'ads-textarea' )
-            ),
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-          
-        )
-    ) );
-
-
-
-    
-    
   
   
 
@@ -1035,8 +477,8 @@ Redux::setSection( $opt_name, array(
         function dynamic_section( $sections ) {
             //$sections = array();
             $sections[] = array(
-                'title'  => __( 'Section via hook', 'redux-framework-demo' ),
-                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo' ),
+                'title'  => __( 'Section via hook', 'caynoon_text' ),
+                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'caynoon_text' ),
                 'icon'   => 'el el-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()

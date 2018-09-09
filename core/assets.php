@@ -97,6 +97,8 @@ function load_custom_wp_admin_style() {
         global $css;
         wp_register_style( 'custom_wp_admin_css', $css . '/admin.css', true, '1.0.0' );
         wp_enqueue_style( 'custom_wp_admin_css' );
+        wp_register_style( 'redux_it', THEME_URL.'/core/theme-options/ReduxCore/assets/css/redux-style.css', true, '1.0.0' );
+        wp_enqueue_style( 'redux_it' );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
