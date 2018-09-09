@@ -1,18 +1,8 @@
-<?php 
-//app::dd($fonts);
-echo 	$options = get_option( 'dkjdkjd_settings' )['dkjdkjd_text_field_0'];
-
-?>
-
 <!-- جلب الهيدر -->
 <?php  get_header();  ?>
 
 <!-- جلب اعدادات القالب من ريداكس فريمورك -->
-    <?php global $theme_setting;  ?>
- <?php echo $theme_setting['site-title']; die(); ?>
-
-
-
+<?php global $theme_setting;  ?>
 
 <!-- جلب محتوى الهيدر -->
 <?php get_main_header(); ?>  
