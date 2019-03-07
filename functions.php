@@ -122,3 +122,9 @@ function custom_wpkses_post_tags( $tags, $context ) {
 add_filter( 'wp_kses_allowed_html', 'custom_wpkses_post_tags', 10, 2 );
 
 
+// [woocommerce_cart] – shows the cart page
+// [woocommerce_checkout] – shows the checkout page
+// [woocommerce_my_account] – shows the user account page
+// [woocommerce_order_tracking] – shows the order tracking form 
+	
+	
