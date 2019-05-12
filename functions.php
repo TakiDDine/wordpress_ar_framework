@@ -98,6 +98,15 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
 
+//TN Disable WordPress Version from your website
+function tn_disable_wp_version() {
+return '';
+}
+add_filter ( 'the_generator' ,  'tn_disable_wp_version' );
+
+
+
+
 
 /**
  * Add iFrame to allowed wp_kses_post tags
