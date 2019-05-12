@@ -98,12 +98,6 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
 
-//TN Disable WordPress Version from your website
-function tn_disable_wp_version() {
-return '';
-}
-add_filter ( 'the_generator' ,  'tn_disable_wp_version' );
-
 
 
 
@@ -135,5 +129,15 @@ add_filter( 'wp_kses_allowed_html', 'custom_wpkses_post_tags', 10, 2 );
 // [woocommerce_checkout] – shows the checkout page
 // [woocommerce_my_account] – shows the user account page
 // [woocommerce_order_tracking] – shows the order tracking form 
-	
-	
+
+
+//Disable the plugin and theme editor
+define( 'DISALLOW_FILE_EDIT', true );
+
+// REMOVE THE WORDPRESS VERSION NUMBER
+remove_action('wp_head', 'wp_generator');
+
+// Implement Cookie with HTTPOnly and Secure flag in WordPress
+@ini_set('session.cookie_httponly', true);
+@ini_set('session.cookie_secure', true);
+@ini_set('session.use_only_cookies', true);
